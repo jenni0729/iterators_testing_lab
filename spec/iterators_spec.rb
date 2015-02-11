@@ -9,6 +9,9 @@ before :each do
   @nil = nil
 end
   # select
+
+                     
+  # select
   describe "#select" do
       it "should select even numbers" do
         expect(@arr.select { |num|  num.even?  }).to eq([2,4])
@@ -18,45 +21,45 @@ end
   # reject
   describe "#reject" do
     it "should reject even numbers" do
-        expect().to eq()
+        expect(@arr.reject { |num| num.even?}).to eq([1,3,5])
       end
   end
 
   # collect / map
   describe "#map" do
     it "should square each number" do
-        expect().to eq()
+        expect(@arr.map { |num| num*num}).to eq([1,4,9,16,25])
       end
   end
 
   # detect / find
   describe "#detect" do
     it "should detect all numbers divisible by 2 and 4" do
-        expect().to eq()
+        expect(@arr.detect{ |num| num % 2 == 0 and num % 4 == 0}).to eq(4)
       end
   end
 
   # inject
   describe "#inject" do
     it "should sum up all the numbers" do
-      expect().to eq()
+      expect(@arr.inject{ |num, num2| num + num2}).to eq(15)
     end
   end
 
   # partition
   describe "#partition" do
     it "should return an array of partitioned arrays " do
-      expect().to eq()
+      expect(@arr.partition{|num| num.even?}).to eq([[2, 4], [1, 3, 5]])
     end
   end
 
   # sort
   describe "#sort" do
     it "should sort an array of numbers" do
-      expect().to eq()
+      expect(@arr.sort{ |num1, num2| num2 <=> num1}).to eq([5, 4, 3, 2, 1])
     end
   end
-
+  
   # one?
   describe "#one" do
     it "should return true if only one element meets the condition" do
